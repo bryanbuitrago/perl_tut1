@@ -63,42 +63,90 @@ use feature "switch";
 
 # ---------- MATH ----------
 
-say "5 + 4 = ", 5 + 4;
-say "5 - 4 = ", 5 - 4;
-say "5 * 4 = ", 5 * 4;
-say "5 / 4 = ", 5 / 4;
-say "5 % 4 = ", 5 % 4;
-say "5 ** 4 = ", 5 ** 4;
+# say "5 + 4 = ", 5 + 4;
+# say "5 - 4 = ", 5 - 4;
+# say "5 * 4 = ", 5 * 4;
+# say "5 / 4 = ", 5 / 4;
+# say "5 % 4 = ", 5 % 4;
+# say "5 ** 4 = ", 5 ** 4;
+#
+# say("=================");
+#
+# # Built in functions
+# # Includes Trig functions plus
+# say "EXP 1 = ", exp 1; # e to the power of
+# say "HEX 10 = ", hex 10; # Convert from hexidecimal
+# say "OCT 10 = ", oct 10; # Convert from Octal
+# say "INT 6.45 = ", int(6.45); # Truncate You can use parentheses
+# say "LOG 2 = ", log 2; # Number to the power of e
+# say "Random between 0 - 10 = ", int(rand 11);
+#
+# say("=================");
+#
+# # Assignment Operators
+# # +=, -=, *=, /=
+# my $rand_num = 5;
+# $rand_num += 1;
+# say "Number Incremented ", $rand_num;
+#
+# say("=================");
+#
+# # Shortcut Increment and Decrement
+# say "6++ = ", $rand_num++;
+# say "++6 = ", ++$rand_num;
+# say "6-- = ", $rand_num--;
+# say "--6 = ", --$rand_num;
+#
+# say("=================");
+#
+# # Order of operations
+# say "3 + 2 * 5 = ", 3 + 2 * 5;
+# say "(3 + 2) * 5 = ", (3 + 2) * 5;
 
-say("=================");
+# ---------- CONDITIONALS ----------
 
-# Built in functions
-# Includes Trig functions plus
-say "EXP 1 = ", exp 1; # e to the power of
-say "HEX 10 = ", hex 10; # Convert from hexidecimal
-say "OCT 10 = ", oct 10; # Convert from Octal
-say "INT 6.45 = ", int(6.45); # Truncate You can use parentheses
-say "LOG 2 = ", log 2; # Number to the power of e
-say "Random between 0 - 10 = ", int(rand 11);
+# Perl considers undef, 0, 0.0, "", and "0" to be false
+# ==, !=, <, <=, >, >=
+# Boolean Operators: !, &&, ||
 
-say("=================");
+# If, else if, else statements
+$age = 80;
+my $is_not_intoxicated = 1;
+my $age_last_exam = 16;
 
-# Assignment Operators
-# +=, -=, *=, /=
-my $rand_num = 5;
-$rand_num += 1;
-say "Number Incremented ", $rand_num;
+# Simple if example
+if($age < 16){
+  say "You can't drive";
+} elsif(!$is_not_intoxicated) {
+  say "You can't drive";
+} else {
+  say "You can drive";
+}
 
-say("=================");
+# Complex review of everything
+if(($age >= 1) && ($age < 16)){
+  say "You can't Drive";
+} elsif(!$is_not_intoxicated){
+  say "You can't drive";
+} elsif(($age >= 80) && (($age > 100) || (($age - $age_last_exam) > 5))){
+  say "You can't drive";
+} else {
+  say "You can drive";
+}
 
-# Shortcut Increment and Decrement
-say "6++ = ", $rand_num++;
-say "++6 = ", ++$rand_num;
-say "6-- = ", $rand_num--;
-say "--6 = ", --$rand_num;
+# Comparison operators for strings
+# eq, ne, lt, le, gt, ge
+if('a' eq 'b'){
+  say "a equals b";
+} else {
+  say "a doesn't equal b";
+}
 
-say("=================");
+# unless is the opposite of if
+unless(!$is_not_intoxicated){
+  say "Get Sober";
+}
 
-# Order of operations
-say "3 + 2 * 5 = ", 3 + 2 * 5;
-say "(3 + 2) * 5 = ", (3 + 2) * 5;
+# Ternary operator returns different values depending
+# on a condition
+say (($age > 18) ? "Can Vote" : "Can't Vote");
